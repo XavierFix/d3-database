@@ -1,6 +1,7 @@
 data-monster
 ============
 
+<<<<<<< HEAD
 Eventually this will be a domain-specific language that will transpile to d3.js.
 
 Input like this:
@@ -160,3 +161,16 @@ function draw (error, data){
 queue().defer(d3.tsv, 'van_gogh_additional_measurements.tsv').
        .await(draw);
 ```
+=======
+Repo for emitting d3
+
+See `ent-ex` for possible use syntax.
+
+Next steps: 
+* ~~make the scaffold for w/ data and without~~
+* ~~research input language~~
+* ~~add links to good examples~~
+* finish skeleton_02 and test with static data
+* write parser
+* see [future.md](https://github.com/sarahgp/data-monster/blob/master/future.md) for more
+>>>>>>> 042e761 (Update README.md)
