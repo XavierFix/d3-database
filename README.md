@@ -8,37 +8,21 @@ Input like this:
 ```
 
 (data: 'van_gogh_additional_measurements.tsv'
-
   (clean: [ d.Shape_Count = +d.Shape_Count, 
-
             d.ratio = +d["Image_Height/Image_Width "])
-
   (canvas: 1000 600 {20 20 60 60} '#scatterplot'
-
     (color: category10)
-
     (circle: { cx: 'ratio', cy: 'Shape_Count', r: 4, fill: 'year' } 
-
        attr: { 'class': 'dot' }
-
        tooltips: true // default behavior, doesn't need to be included
-
        click:  function(d) { window.open('https://www.google.com/search?site=imghp&tbm=isch&q=van+gogh+'+d.Title); })
-
     (axis-x: attr: { 'class': 'label', 'x': width, 'y': 50 }
-
              style: { 'text-anchor': 'end' }
-
              text: { 'Height: Width Ratio' } )
-
     (axis-y: attr: { 'class': 'label', 'y': -10 }
-
              style: { 'text-anchor': 'end' }
-
              text: { 'Num Shapes' } )
-
   )
-
 )
 
 ```
@@ -161,6 +145,7 @@ function draw (error, data){
 queue().defer(d3.tsv, 'van_gogh_additional_measurements.tsv').
        .await(draw);
 ```
+<<<<<<< HEAD
 =======
 Repo for emitting d3
 
@@ -174,3 +159,5 @@ Next steps:
 * write parser
 * see [future.md](https://github.com/sarahgp/data-monster/blob/master/future.md) for more
 >>>>>>> 042e761 (Update README.md)
+=======
+>>>>>>> 778bb27 (Remove extra lines in README)
