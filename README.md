@@ -146,6 +146,7 @@ queue().defer(d3.tsv, 'van_gogh_additional_measurements.tsv').
        .await(draw);
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Repo for emitting d3
 
@@ -161,3 +162,13 @@ Next steps:
 >>>>>>> 042e761 (Update README.md)
 =======
 >>>>>>> 778bb27 (Remove extra lines in README)
+=======
+
+### Chomping (aka compiling) the file
+
+To compile a data-monster `.dm` file to js, run
+
+```
+node chomp <filename0> ... <filenameN> [optional output directory] 
+```
+>>>>>>> 97560e2 (Update read me for calling chomp)
