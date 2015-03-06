@@ -166,9 +166,14 @@ Next steps:
 
 ### Chomping (aka compiling) the file
 
-To compile a data-monster `.dm` file to js, run
+To compile a data-monster `.dm` file to javascript, run
 
 ```
 node chomp <filename0> ... <filenameN> [optional output directory] 
 ```
+<<<<<<< HEAD
 >>>>>>> 97560e2 (Update read me for calling chomp)
+=======
+
+The `-a` flag can also be used to chomp all the files in the current directory
+>>>>>>> d9ab7f5 (-a flag implemented)
