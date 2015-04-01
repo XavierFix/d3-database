@@ -6,9 +6,9 @@ data-monster
 *  What is Data Monster?
 *  Why would I use this?
 *  Okay, I’m convinced. How do I monster?
-- Installing
-- Chomping (aka compiling)
-- Writing DM
+  - Installing
+  - Chomping (aka compiling)
+  - Writing DM
 *  Why would you build this?
 *  Feedback, the Future + Contributing
 *  License
@@ -258,4 +258,7 @@ Please open an issue, shoot me an email at [hi@sarahgp.com](mailto:hi@sarahgp.co
 
 ### License
 MIT
+<<<<<<< HEAD
 >>>>>>> a8b70a0 (Working on README)
+=======
+>>>>>>> 673eab2 (Update README.md)
