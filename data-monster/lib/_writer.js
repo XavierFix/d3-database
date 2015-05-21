@@ -2,54 +2,38 @@ var fs        = require('fs'),
     util      = require('util'),
     _         = require('lodash'),
     pretty    = require('js-object-pretty-print').pretty, // unpacks objects
-    beautify  = require('js-beautify').js_beautify,      // formats output
-    guts      = require('./guts.js'),
-    flags     = { tt   : false,
-                  axis : false  };                      // to output companion files
+    beautify  = require('js-beautify').js_beautify;      // formats output
+
+var flags = { tt   : false,
+              axis : false  }; // is set to true by tooltips/axes, to output companion files
 
 function buildString(structure){
+ 
+ var choms      = structure,
+     output     = "",                   // this is the string that will be built
+     keys       = Object.keys(choms);  // these are the keys we need to build it
 
-  // Lists
-  var noms = {
-    data   : '',
-    canvas : '',
-    elem   : '',
-    axis   : '',
-    scale  : '',
-   //  attr   : attrBite,
-   //  style  : styleBite,
-   //  tooltip: ttBite,
-
-   // // events <- add more, consider method to take other DOM methods
-   //  click     :   function(args){ return eventBite(args)('click')},
-   //  mouseover :   function(args){ return eventBite(args)('mouseover')},
-   //  mouseenter:   function(args){ return eventBite(args)('mouseenter')},
-   //  mouseleave:   function(args){ return eventBite(args)('mouseleave')},
-   //  hover     :   function(args){ return eventBite(args)('hover')},
-  },
-
-  d3things = {
+  var d3things = {
     // colors
-    category10  : 'pre',
-    category20  : 'pre',
-    category20b : 'pre',
-    category20c : 'pre',
+    'category10'  : 'pre',
+    'category20'  : 'pre',
+    'category20b' : 'pre',
+    'category20c' : 'pre',
 
     // axes
-    linear      : 'pre',
-    log         : 'pre',
-    identity    : 'pre',
-    sqrt        : 'pre',
-    pow         : 'pre',
-    quantize    : 'pre',
-    quantile    : 'pre',
-    threshold   : 'pre',
-    time        : 'post'
+    'linear'      : 'pre',
+    'log'         : 'pre',
+    'identity'    : 'pre',
+    'sqrt'        : 'pre',
+    'pow'         : 'pre',
+    'quantize'    : 'pre',
+    'quantile'    : 'pre',
+    'threshold'   : 'pre',
+    'time'        : 'post'
 
   };
 
 
-<<<<<<< HEAD
   // Utilty funcs (order: alpha)
 
   function biteBiteBite(toc, contents, str){
@@ -419,27 +403,11 @@ function buildString(structure){
       str += assembleMaxes(obk);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // color
-    // obk.hasOwnProperty('color') && (str+=eatVars(obk.color));
-=======
-    // scales & maxFuncs
-=======
->>>>>>> f4073a0 (Maxes populating)
     str += "var xScale = "
-<<<<<<< HEAD
-    str += obk.hasOwnProperty('xScale') ? assembleScale('user', 'x', obk) : assembleScale('default', 'x') + ", \n"
-    str += "yScale = "
-    str += obk.hasOwnProperty('yScale') ? assembleScale('user', 'y', obk) : assembleScale('default', 'y')
-    str += obk.hasOwnProperty('color') ? (", \n color = " + eatVars(obk.color) + "(); \n") : ";\n"
->>>>>>> 05030d0 (Scales making, but not yet maxes)
-=======
     str += obk.hasOwnProperty('xScale') ? assembleScale('user', 'x', obk) : assembleScale('default', 'x') + ", ";
     str += "yScale = ";
     str += obk.hasOwnProperty('yScale') ? assembleScale('user', 'y', obk) : assembleScale('default', 'y');
     str += obk.hasOwnProperty('color') ? (", \n color = " + eatVars(obk.color) + "();") : ";";
->>>>>>> c8b3aed (Cleaning up)
 
     // add in axes, if they exist
     (obk.hasOwnProperty('xAxis')) && (str += assembleAxes('xAxis', obk));
@@ -514,26 +482,10 @@ function buildString(structure){
       // fs.writeFile('output.js', output);
 
     })();
-=======
-  // WORKHORSE FUNCS
->>>>>>> 90e6c48 (New writer file begins)
   
-  function process(value){
-
-  }
-
-  function build(expressions){
-    // similar to generate: check if element is in noms otherwise output string key(process(value)) 
-    return _.map(expressions, function(exp){
-      var key = _.first(_.keys(_.omit(exp, 'parent')));
-      return key + "(" + exp[key] + ")";
-    }).join('');
-     // return expressions;
-  }
-
-  // _.map(structure, build);
-  console.log(beautify(_.map(structure, build).join(''), {"break_chained_methods": true}));
-  // return beautify(_.map(structure, build).join(''), {"break_chained_methods": true});
+  return beautify(output, {"break_chained_methods": true}); 
+  // console.log(util.inspect(output, false, null));
+   
 }
 
 exports.string  = buildString;
