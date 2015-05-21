@@ -521,7 +521,9 @@ function buildString(structure){
 >>>>>>> 90e6c48 (New writer file begins)
   
   function process(value){
-
+    guts.isHashMap(value) ?
+        console.log('hm')
+      : console.log(value);
   }
 
   function build(expressions){
@@ -532,7 +534,7 @@ function buildString(structure){
              noms[exp.name.split('_')[0]]
            : _.includes(_.keys(noms), key) ?
              noms[key]
-           : key + "(" + exp[key] + ")"
+           : key + "(" + process(exp[key]) + ")"
       } else {
         throw new Error('Invalid input:' + exp);
       }
